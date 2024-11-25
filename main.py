@@ -9,10 +9,11 @@ BACKGROUND_COLOR = "#B1DDC6"
 # Window setup
 window = Tk()
 window.title("Watermark Me")
+window.minsize(width=800, height=500)
 window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
 
 # Canvas setup
-
+canvas = Canvas(width=800, height=600, bg=BACKGROUND_COLOR)
 
 
 window.mainloop()
