@@ -18,10 +18,20 @@ def open_img():
         try:
             image = Image.open(file_path)
             photo = ImageTk.PhotoImage(image)
-            image_label.config(image=photo)
-            image_label.image = photo
+            canvas.create_image(400, 300, image=photo)
+            canvas.grid(column=1, row=1)
+            # image_label.config(image=photo)
+            # image_label.image = photo
+            # add_text.pack()
+            # add_img.pack()
         except Exception as e:
             tkinter.messagebox.showerror("Error", f"Could not open image: {e}")
+
+def add_text():
+    pass
+
+def add_img():
+    pass
 
 
 
@@ -29,19 +39,30 @@ def open_img():
 # Window setup
 window = Tk()
 window.title("Watermark Me")
-window.minsize(width=800, height=500)
+# window.minsize(width=800, height=500)
 window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
 
 # Canvas setup
-canvas = Canvas(width=800, height=00, bg=BACKGROUND_COLOR)
-
-# Button to select image
-button = Button(window, text="Select Image", command=open_img)
-button.pack(pady=20)
+canvas = Canvas(width=800, height=600, bg=BACKGROUND_COLOR)
 
 # Image placeholder
 image_label = Label(window, text="No Image Selected")
-image_label.pack()
+# image_label.pack()
+
+# target_image = canvas.itemconfig(image_label, image=image_label)
+# canvas.grid(column=0, row=0)
+
+# Button to select image
+button = Button(window, text="Select Image", command=open_img)
+button.grid(column=0, row=0)
+# button.pack(pady=20)
+
+# Button to add text as watermark
+add_text = Button(window, text="Add Text", command=add_text)
+
+
+# Button to add image as watermark
+add_img = Button(window, text="Add Image", command=add_img)
 
 
 window.mainloop()
