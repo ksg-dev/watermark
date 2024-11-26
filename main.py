@@ -10,9 +10,9 @@ from PIL import Image, ImageTk
 BACKGROUND_COLOR = "#B1DDC6"
 
 def open_img():
-    file_path = filedialog.askopenfile(
+    file_path = filedialog.askopenfilename(
         title="Select Image",
-        filetypes=(("Image Files", "*.jpg *.png *.jpeg"), ("All Files", "*.*"))
+        filetypes=[("Image Files", "*.jpg *.png *.jpeg"), ("All Files", "*.*")]
     )
     if file_path:
         try:
