@@ -32,15 +32,16 @@ window.title("Watermark Me")
 window.minsize(width=800, height=500)
 window.config(pady=50, padx=50, bg=BACKGROUND_COLOR)
 
+# Canvas setup
+canvas = Canvas(width=800, height=00, bg=BACKGROUND_COLOR)
+
 # Button to select image
 button = Button(window, text="Select Image", command=open_img)
 button.pack(pady=20)
 
-image_label = Label(window)
+# Image placeholder
+image_label = Label(window, text="No Image Selected")
 image_label.pack()
-
-# Canvas setup
-canvas = Canvas(width=800, height=600, bg=BACKGROUND_COLOR)
 
 
 window.mainloop()
